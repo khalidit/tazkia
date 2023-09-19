@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { IntlProvider } from "react-intl";
+import RootNavigator from "./src/navigation";
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
+import { translations } from "./src/translations";
 
 export default function App() {
+  const [locale, setLocale] = useState(navigator.language); // state for current locale
+
+  const messages = translations["ar"];
+
+  /*const handleLanguageChange = (selectedLocale) => {
+    setLocale(selectedLocale);
+  };*/
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <IntlProvider locale={locale} messages={messages}>
+      <RootNavigator />
+      <StatusBar style="inverted" />
+    </IntlProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
