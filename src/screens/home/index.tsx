@@ -13,6 +13,8 @@ export default function HomeScreen(): ReactElement {
   const hasProgress = useStoreState((state) => state.global.hasProgress);
 
   return (
-    <ScrollView contentContainerStyle={commonStyles.container}>{hasProgress ? <MyProgress /> : <Welcome />}</ScrollView>
+    <ScrollView contentContainerStyle={commonStyles.container}>
+      {!hasProgress ? <MyProgress /> : <Welcome />}
+    </ScrollView>
   );
 }
