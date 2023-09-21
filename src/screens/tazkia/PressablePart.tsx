@@ -1,12 +1,12 @@
-import { Avatar, Pressable } from "@react-native-material/core";
-import { ImageSourcePropType, StyleSheet } from "react-native";
-import { Text, Stack } from "@react-native-material/core";
-import { useNavigation } from "@react-navigation/native";
-import { TazkiaScreenNavigationProp } from "../../navigation/types";
+import { Avatar, Pressable } from '@react-native-material/core';
+import { ImageSourcePropType, StyleSheet } from 'react-native';
+import { Text, Stack } from '@react-native-material/core';
+import { useNavigation } from '@react-navigation/native';
+import { TazkiaScreenNavigationProp } from '../../navigation/types';
 
 export interface Part {
   name: string;
-  route: "Part1" | "Part2" | "Part3";
+  route: 'Part1' | 'Part2' | 'Part3';
   description: string;
   imageSource: ImageSourcePropType;
 }
@@ -18,7 +18,7 @@ export default function PressablePart({ item }: Props) {
   const navigation = useNavigation<TazkiaScreenNavigationProp>();
 
   function handlePress() {
-    navigation.navigate("Part3");
+    navigation.navigate('Part3');
   }
 
   return (
@@ -34,11 +34,11 @@ export default function PressablePart({ item }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingVertical: 15,
     paddingHorizontal: 80,
-    backgroundColor: "#e7fbe8",
+    backgroundColor: '#e7fbe8',
   },
   img: {
     width: 120,

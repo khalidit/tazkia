@@ -1,19 +1,18 @@
-import { View } from "react-native";
-import MyProgress from "./MyProgress";
-import Welcome from "./Welcome";
-import { ReactElement } from "react";
-import { commonStyles } from "../../styles/CommonStyles";
+import { ReactElement } from 'react';
+import { ScrollView } from 'react-native';
+import { useStoreState } from '../../stores/hooks';
+import { commonStyles } from '../../styles/CommonStyles';
+import MyProgress from './MyProgress';
+import Welcome from './Welcome';
 
 /**
  * Main screen
  * @returns {ReactElement}
  */
 export default function HomeScreen(): ReactElement {
-  const hasProgress: boolean = false;
+  const hasProgress = useStoreState((state) => state.global.hasProgress);
 
   return (
-    <View style={commonStyles.container}>
-      {hasProgress ? <MyProgress /> : <Welcome />}
-    </View>
+    <ScrollView contentContainerStyle={commonStyles.container}>{hasProgress ? <MyProgress /> : <Welcome />}</ScrollView>
   );
 }

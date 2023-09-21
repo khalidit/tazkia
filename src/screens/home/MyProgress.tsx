@@ -1,5 +1,5 @@
-import { Text, View } from "react-native";
-import { commonStyles } from "../../styles/CommonStyles";
+import { Text, View } from 'react-native';
+import { commonStyles } from '../../styles/CommonStyles';
 
 export default function MyProgress() {
   return (

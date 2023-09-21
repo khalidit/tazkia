@@ -1,10 +1,10 @@
-import * as React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import * as React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { HomeStackNavigatorParamList } from "./types";
-import HomeScreen from "../screens/home";
-import DetailScreen from "../screens/DetailScreen";
-import SunanScreen from "../screens/sunan";
+import { HomeStackNavigatorParamList } from './types';
+import HomeScreen from '../screens/home';
+import DetailScreen from '../screens/DetailScreen';
+import SunanScreen from '../screens/sunan';
 
 const HomeStack = createNativeStackNavigator<HomeStackNavigatorParamList>();
 

@@ -1,22 +1,14 @@
-import { IntlProvider } from "react-intl";
-import RootNavigator from "./src/navigation";
-import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import { translations } from "./src/translations";
+import { StatusBar } from 'react-native';
+import Header from './src/components/Header';
+import RootNavigator from './src/navigation';
+import Providers from './src/providers';
 
 export default function App() {
-  const [locale, setLocale] = useState(navigator.language); // state for current locale
-
-  const messages = translations["ar"];
-
-  /*const handleLanguageChange = (selectedLocale) => {
-    setLocale(selectedLocale);
-  };*/
-
   return (
-    <IntlProvider locale={locale} messages={messages}>
+    <Providers>
+      <Header />
       <RootNavigator />
-      <StatusBar style="inverted" />
-    </IntlProvider>
+      <StatusBar />
+    </Providers>
   );
 }
